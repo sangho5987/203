@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>이번 주 노트북함 비밀번호</title>
+  </head>
+  <body>
+    <script>
+      function getThisWeekMonday() {
+        const today = new Date();
+        const day = today.getDay();
+        const diff = day === 0 ? -6 : 1 - day;
+        const monday = new Date(today);
+        monday.setDate(today.getDate() + diff);
+        const yy = String(monday.getFullYear()).slice(-2);
+        const mm = String(monday.getMonth() + 1).padStart(2, '0');
+        const dd = String(monday.getDate()).padStart(2, '0');
+      
+        return yy + mm + dd;
+      }
+        let arr = "";
+        ((getThisWeekMonday().split()).reverse()).forEach((element)=>{
+          arr+=element; 
+          });
+      
+
+    </script>
+  </body>
+</html>
